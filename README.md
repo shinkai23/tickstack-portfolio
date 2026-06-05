@@ -1,0 +1,2 @@
+# tickstack-portfolio
+実際のTickStackの開発レポジトリは個人情報を多々含むため、ポートフォリオ用のレポジトリを用意する
