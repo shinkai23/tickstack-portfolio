@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 6</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="top-nav__user">{{ current_user.display_name }} さんのタイマー設定</div>
+        <a href="{{ url_for('logout') }}" class="top-nav__link">ログアウト</a>
+    </header>
+    <div class="hero">
+        <img src="{{ url_for('static', filename='img/timer.jpg') }}" alt="timer画像" class="hero-img">
+        <h1 class="hero-title">🕰️ ポモドーロタイマー設定</h1>
+    </div>
+    <div class="content-card form-card">
+        <form action="/set_timer" method="POST" class="input-form">
+            <h2>新しいタイマー設定</h2>
+            <p class="center">設定したい作業時間と休憩時間を入力してください</p>
+            <div class="form-group center">
+                <label for="work_time">作業時間：</label>
+                <input type="number" id="work_time" name="work_time" required min="1">
+                <span>分</span>
+            </div>
+            <div class="form-group center">
+                <label for="break_time">休憩時間：</label>
+                <input type="number" id="break_time" name="break_time" required min="1">
+                <span>分</span>
+            </div>
+            <div class="center">
+                <button type="submit" class="btn_04">🕒 設定を登録</button>
+            </div>
+        </form>
+    </div>
+    <div class="content-card table-card">
+        <form action="/delete_timer" method="POST">
+            <h2>過去の設定履歴</h2>
+            <table class="data-table center">
+                <thead>
+                    <tr>
+                        <th>削除</th>
+                        <th>作業時間</th>
+                        <th>休憩時間</th>
+                        <th>再設定</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for setting in settings_list %}
+                    <tr>
+                        <td class="checkbox-cell">
+                            <input type="checkbox" name="delete_ids" value="{{ setting.id }}">
+                        </td>
+                        <td>{{ setting.work_time }}分</td>
+                        <td>{{ setting.break_time }}分</td>
+                        <td>
+                            <a href="{{ url_for('select_timer', setting_id=setting.id) }}" class="select-link btn_05">
+                                選択
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="no-setting">設定はまだありません</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="center">
+                <button type="submit" class="btn_04">チェックした設定を削除</button>
+            </div>
+        </form>
+    </div>
+    <p>
+        <a href="{{ url_for('index')}}" class="backLink">TOPに戻る</a>
+    </p>
+</body>
+
+</html>

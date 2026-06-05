@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 6 Server</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="top-nav__user">{{ current_user.display_name }} さんのタスク</div>
+        <a href="{{ url_for('logout') }}" class="top-nav__link">ログアウト</a>
+    </header>
+    <div class="hero2">
+        <img src="{{ url_for('static', filename='img/todo.jpg') }}" alt="todo画像" class="hero-img2">
+        <h1 class="hero-title2">📝 To Do 設定</h1>
+    </div>
+
+    <div class="content-card form-card">
+        <h2>新しいタスクを登録</h2>
+        <form action="/set_todo" method="POST" class="input-form">
+            <p class="center">設定したい<span class="bold">期限日</span>と<span class="bold">タスク内容</span>を入力してください</p>
+            
+            <div class="form-group center">
+                <label for="task_date">期限日：</label>
+                <input type="date" id="task_date" name="task_date" required>
+                <span></span> 
+            </div>
+            
+            <div class="form-group center">
+                <label for="addTask">タスク内容：</label>
+                <input type="text" id="addTask" name="add_task" required>
+                <span></span>
+            </div>
+            
+            <div class="form-group center">
+                <label for="category">カテゴリ：</label>
+                <select id="category" name="category" required>
+                    <option value="1">勉強</option>
+                    <option value="2">仕事</option>
+                    <option value="3">趣味</option>
+                </select>
+                <span></span>
+            </div>
+            
+            <div class="center">
+                <button type="submit" class="btn_04" style="margin-top:15px;">登録</button>
+            </div>
+        </form>
+    </div>
+    <div class="content-card table-card wide-card">
+        <h2>タスク一覧</h2>
+        
+        <div class="filter-buttons-container center">
+            <button type="button" class="filter-btn active" onclick="filterTasks('all', this)">すべて</button>
+            <button type="button" class="filter-btn" onclick="filterTasks('1', this)">勉強</button>
+            <button type="button" class="filter-btn" onclick="filterTasks('2', this)">仕事</button>
+            <button type="button" class="filter-btn" onclick="filterTasks('3', this)">趣味</button>
+        </div>
+
+        <div class="task-tables-wrapper">
+            <div class="task-table-block">
+                <h3 class="center">未完了のタスク</h3>
+                <table class="data-table center">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">期限日</th>
+                            <th style="width: 40%;">タスク内容</th>
+                            <th style="width: 20%;">カテゴリ</th>
+                            <th style="width: 15%;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in tasks_list %}
+                        <tr data-category="{{ task.category }}">
+                            <td>〜{{ task.due_date|replace("-", "年", 1)|replace("-", "月", 1) }}日</td>
+                            <td>{{ task.title }}</td>
+                            <td>
+                                {% set cat = (task.category if task.category is not none else 0)|int %}
+                                {% if cat == 1 %}
+                                勉強
+                                {% elif cat == 2 %}
+                                仕事
+                                {% elif cat == 3 %}
+                                趣味
+                                {% else %}
+                                その他
+                                {% endif %}
+                            </td>
+                            <td>
+                                <form action="{{ url_for('update_todo_status', todo_id=task.id) }}" method="post"
+                                    style="display:inline;">
+                                    <input type="hidden" name="is_done" value="true">
+                                    <button type="submit" class="btn_05 complete-btn">完了</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="no-setting">まだタスクはありません</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="task-table-block">
+                <h3 class="center">完了済みのタスク</h3>
+                <table class="data-table center">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">期限日</th>
+                            <th style="width: 35%;">タスク内容</th>
+                            <th style="width: 20%;">カテゴリ</th>
+                            <th style="width: 10%;">操作</th>
+                            <th style="width: 10%;">削除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in completed_list %}
+                        <tr data-category="{{ task.category }}">
+                            <td>〜{{ task.due_date|replace("-", "年", 1)|replace("-", "月", 1) }}日</td>
+                            <td>{{ task.title }}</td>
+                            <td>
+                                {% set cat = (task.category or 0)|int %}
+                                {% if cat == 1 %}
+                                勉強
+                                {% elif cat == 2 %}
+                                仕事
+                                {% elif cat == 3 %}
+                                趣味
+                                {% else %}
+                                その他
+                                {% endif %}
+                            </td>
+                            <td>
+                                <form action="{{ url_for('update_todo_status', todo_id=task.id) }}" method="post">
+                                    <input type="hidden" name="is_done" value="false">
+                                    <button type="submit" class="btn_05 incomplete-btn">戻す</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ url_for('delete_todo', todo_id=task.id) }}" method="post"
+                                    style="display:inline;">
+                                    <button type="submit" class="btn_05 delete-btn" onclick="return confirm('本当に削除しますか？');">削除</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="no-setting">まだタスクはありません</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p style="text-align:center; margin-top:16px;">
+        <a href="{{ url_for('index') }}" class="backLink">TOPに戻る</a>
+    </p>
+
+    <script>
+        function filterTasks(filter, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            document.querySelectorAll('tr[data-category]').forEach(tr => {
+                const cat = (tr.getAttribute('data-category') || '').toString();
+                // 親要素のdisplayも考慮
+                const parentTable = tr.closest('.data-table');
+                if (filter === 'all' || cat === filter) {
+                    tr.style.display = '';
+                } else {
+                    tr.style.display = 'none';
+                }
+                
+                // 行がフィルタで非表示になった結果、テーブル全体が空になった場合の処理はここでは行わず、
+                // 単にtrを非表示にするのみとする。
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const activeBtn = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
+            filterTasks('all', activeBtn);
+        });
+    </script>
+</body>
+
+</html>

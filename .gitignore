@@ -1,0 +1,24 @@
+# Pythonキャッシュファイル
+__pycache__/
+*.pyc
+
+# 環境変数ファイル
+.env
+.env.local
+.env.production
+
+# OS / editor generated files
+.DS_Store
+.vscode/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local/private deployment metadata
+.clasp.json
+*.m5f
+
+# Runtime logs
+*.log

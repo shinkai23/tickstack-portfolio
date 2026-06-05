@@ -1,0 +1,92 @@
+<!DOCTYPE html><!-- テンプレ -->
+<html lang="ja"><!-- 言語設定 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 6</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<!-- headタグには表に出ない設定やウェブページのメタ情報を入れる部分 -->
+
+<body>
+    <header class="top-nav">
+        <div class="top-nav__user">{{ current_user.display_name }} さん</div>
+        <div class="top-nav__actions">
+            <form class="top-nav__uid-form" action="{{ url_for('submit_uid') }}" method="POST">
+                <label for="UID" class="sr-only">UID入力欄</label>
+                <input type="text" id="UID" name="UID" placeholder="UID">
+                <button type="submit">送信する</button>
+            </form>
+            <a href="{{ url_for('logout') }}" class="top-nav__link">ログアウト</a>
+        </div>
+    </header>
+    <div class="hero">
+        <img src="{{ url_for('static', filename='img/banner.jpg') }}" alt="トップ画像" class="hero-img">
+        <!-- 画像のダウンロード元
+        https://www.photo-ac.com/main/detail/22748659/?downloader_register=success#goog_rewarded
+          -->
+        <h1 class="hero-title">ポモドーロタイマー TOPページ</h1>
+    </div>
+    <div class="content-card">
+        <div class='button-container button-half'>
+            <div class="button-block">
+                <img src="{{ url_for('static', filename='img/todo.jpg') }}" alt="todo画像" class="feature-img">
+                <!-- https://www.ac-illust.com/main/detail.php?id=22811089 -->
+                <a href="{{ url_for('open_todo') }}" class="btn_02">📝 To Do 設定</a>
+                <button class="btn_03" onclick="openModal('todoModal')">「📝 To Do 設定」の説明を見る</button>
+            </div>
+            <div class="button-block">
+                <img src="{{ url_for('static', filename='img/timer.jpg') }}" alt="timer画像" class="feature-img">
+                <!-- https://www.ac-illust.com/main/detail.php?id=22228292&word=%E3%83%9D%E3%83%A2%E3%83%89%E3%83%BC%E3%83%AD%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%80%80%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86&data_type=&from_order_history= -->
+                <a href="{{ url_for('open_time') }}" class="btn_02">🕰️ タイマー周期設定</a>
+                <button class="btn_03" onclick="openModal('timerModal')">「🕰️ タイマー周期設定」の説明を見る</button>
+            </div>
+        </div>
+    </div>
+    <!-- ToDoモーダル -->
+    <div class="modal" id="todoModal">
+        <div class="modal-wrapper">
+            <a href="#" class="close" onclick="closeModal('todoModal')">&times;</a>
+            <div class="modal-content">
+                <h2>ToDoの使い方</h2>
+                <p>
+                    期限日に設定したいタスクの期限日を入力。<br>
+                    「追加するタスク」にタスクを入力して送信する。<br>
+                    下に未完了のタスクと完了済みのタスクが表示される。<br>
+                    完了/未完了を押すとタスクの状態が切り替わる。
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- タイマーモーダル -->
+    <div class="modal" id="timerModal">
+        <div class="modal-wrapper">
+            <a href="#" class="close" onclick="closeModal('timerModal')">&times;</a>
+            <div class="modal-content">
+                <h2>タイマーの使い方</h2>
+                <p>
+                    作業時間と休憩時間（半角数字）を入力して送信する。<br>
+                    過去の設定時間が下に表示され、<br>
+                    選択ボタンを押すと同じ時間で再度登録される。<br>
+                    チェックボックスにチェックを入れた項目は<br>
+                    下の削除ボタンで削除できる。
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- <div>
+        <form action="{{ url_for('submit_uid') }}" method="POST">
+            <label for="UID">UID入力欄</label>
+            <input type="text" id="UID" name="UID" placeholder="UID">
+            <button type="submit">送信する</button>
+        </form>
+    </div> -->
+</body>
+<!-- ブラウザに表示されるのはbodyタグの中に書いた内容だけ -->
+
+</html>
+
+
+<!-- to do/時間設定/ -->

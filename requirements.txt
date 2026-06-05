@@ -1,0 +1,6 @@
+flask
+flask-login
+jinja2
+pymysql
+python-dotenv
+cryptography

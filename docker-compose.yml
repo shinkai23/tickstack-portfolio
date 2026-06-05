@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./clock:/app/clock
+      - ./api:/app/api
+    depends_on:
+      - db
+    environment:
+      - FLASK_ENV=development
+      - PYTHONPATH=/app
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db-data:
