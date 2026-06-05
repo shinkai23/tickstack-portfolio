@@ -106,3 +106,4 @@ M5Stack担当、Web担当、サーバ担当が別々に作業すると、デー�
 - [05_team_management.md](docs/05_team_management.md): チーム開発での担当範囲
 - [06_technical_decision.md](docs/06_technical_decision.md): 技術選定の見直し
 - [07_retrospective.md](docs/07_retrospective.md): 振り返り
+- [08_project_materials.md](docs/08_project_materials.md): 発表資料・報告書アーカイブ

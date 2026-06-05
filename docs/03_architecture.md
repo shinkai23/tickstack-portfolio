@@ -22,6 +22,10 @@ flowchart TB
     API --> DB
 ```
 
+開発時に作成した構成図は以下です。
+
+![開発時のシステム構成図](assets/reference/systemdiagram.png)
+
 ## Web側
 
 Web側はFlaskとJinja2テンプレートで構成されています。ログイン後、ユーザーは以下を設定できます。

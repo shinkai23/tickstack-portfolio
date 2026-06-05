@@ -20,5 +20,8 @@ __pycache__/
 .clasp.json
 *.m5f
 
+# Re-imported private source folder. Use it only as a local source for sanitized assets.
+/RWC25-group06-main 2/
+
 # Runtime logs
 *.log
