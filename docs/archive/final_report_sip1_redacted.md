@@ -43,11 +43,11 @@
 * メイン画面：大きな残り時間表示＋モード表示＋開始／停止ボタン
 
 2. ToDo画面：タスクタイトル＋締切日時×3件＋完了ボタン
-<img width="2922" height="1817" alt="image" src="https://github.com/user-attachments/assets/29baa2da-b655-4a71-b904-d5ed705fd49a" />
+<img width="2922" height="1817" alt="image" src="../assets/final-report/web_top.png" />
 * 設定画面：集中／休憩時間設定＋Wi-Fiステータス
-<img width="2931" height="1835" alt="image" src="https://github.com/user-attachments/assets/f0a39f37-e0f4-40d4-933e-30fdf200e836" />
+<img width="2931" height="1835" alt="image" src="../assets/final-report/todo_form.png" />
 * ToDoのホーム画面:設定とタイマー周期設定の移動ボタン+説明
-  <img width="2933" height="1830" alt="image" src="https://github.com/user-attachments/assets/6b3a9e45-840f-4178-8bc0-ff730eba99ba" />
+  <img width="2933" height="1830" alt="image" src="../assets/final-report/web_top.png" />
 
 ## 3. 提案システムの概要
 - **システム名**：FocusM5  
@@ -80,13 +80,13 @@
 
 - **画面レイアウト**：  
   1. メイン画面：大きな残り時間表示＋モード表示＋開始／停止ボタン
-    <img width="626" height="608" alt="image" src="https://github.com/user-attachments/assets/0b894901-9cfc-4d41-9157-bcaf7c5076c1" />
+    <img width="626" height="608" alt="image" src="../assets/final-report/device_pomodoro.png" />
   2. ToDo画面：タスクタイトル＋締切日時×3件＋完了ボタン
-      <img width="883" height="386" alt="image" src="https://github.com/user-attachments/assets/986ac40b-a88d-40e1-99d1-6152a78f5672" />
+      <img width="883" height="386" alt="image" src="../assets/final-report/device_clock.png" />
 
   3. 設定画面：集中／休憩時間設定＋Wi-Fiステータス  
-    <img width="2898" height="1636" alt="image" src="https://github.com/user-attachments/assets/cec5f51d-a1a1-46ca-b788-5b63358be37b" />
-    <img width="2918" height="1629" alt="image" src="https://github.com/user-attachments/assets/5581cb65-2877-454a-b5d6-384270e66338" />
+    <img width="2898" height="1636" alt="image" src="../assets/final-report/todo_form.png" />
+    <img width="2918" height="1629" alt="image" src="../assets/final-report/timer_form.png" />
 
 
 - **システム構成図**：
@@ -100,7 +100,7 @@
 - M5Stack ポモドーロタイマー表示：動作テスト完了  
 - ToDo同期表示の基本動作：確認済み
 - ガンツチャート
-- <img width="1511" height="448" alt="image" src="https://github.com/user-attachments/assets/a51f5998-8275-4946-b546-4c359064009d" />
+- <img width="1511" height="448" alt="image" src="../assets/slides/slide_toc.png" />
 
 
 - **技術調査の結果**  

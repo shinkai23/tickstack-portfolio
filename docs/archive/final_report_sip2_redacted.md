@@ -38,22 +38,22 @@ UI 概要
 主要機能と課題解決への寄与
 * (1) メイン画面：大きな残り時間表示＋モード表示＋開始／停止ボタン
     * 電源を入れたときに表示される画面。他のものに目線が映らないように必要最低限なものしかボタンはない。
-    <img width="904" height="886" alt="image" src="https://github.com/user-attachments/assets/177752ae-1575-4a39-a6aa-fbb22ae4611b" />
+    <img width="904" height="886" alt="image" src="../assets/final-report/device_clock.png" />
 * (2) M5stack側のTodo画面:todo画面+チェックマーク+完了ボタン
 	何が終わったのか選択する画面。
-  	<img width="2922" height="1814" alt="image" src="https://github.com/user-attachments/assets/5e264a0c-41ef-4af7-a71a-fd8e532b56c7" />
+  	<img width="2922" height="1814" alt="image" src="../assets/final-report/web_top.png" />
 * (3) ToDo画面(新しいタスクの登録)：期限日設定+タスク内容+カテゴリ+登録ボタン
-	<img width="2931" height="1837" alt="image" src="https://github.com/user-attachments/assets/34d90afa-fdeb-4069-8c69-59b9bcc41721" />
+	<img width="2931" height="1837" alt="image" src="../assets/final-report/todo_form.png" />
 タスク一覧（未完了のタスク、完了済みのタスク）の確認画面
- 	<img width="2932" height="1832" alt="image" src="https://github.com/user-attachments/assets/1fc16dfd-3451-4593-8f58-e5fc86a9e49c" />
+ 	<img width="2932" height="1832" alt="image" src="../assets/final-report/todo_list.png" />
 todoの使い方の説明画面
-	<img width="2925" height="1826" alt="image" src="https://github.com/user-attachments/assets/f848ef8d-2020-4cce-be71-78aa07b67b9b" />
+	<img width="2925" height="1826" alt="image" src="../assets/final-report/todo_help.png" />
 * (4)ポモドーロタイマー設定画面（新しいタイマー設定）：作業時間、休憩時間入力ボタン+登録ボタン
-  	<img width="2932" height="1836" alt="image" src="https://github.com/user-attachments/assets/5db33164-8d0e-4f05-b182-f7e874e01497" />
+  	<img width="2932" height="1836" alt="image" src="../assets/final-report/timer_form.png" />
 過去の設定履歴確認画面+削除ボタン
-	<img width="2933" height="1828" alt="image" src="https://github.com/user-attachments/assets/0f80ede8-8539-474e-bacc-9660c4630417" />
+	<img width="2933" height="1828" alt="image" src="../assets/final-report/timer_history.png" />
 ポモドーロタイマーの使い方説明画面
-	<img width="2928" height="1902" alt="image" src="https://github.com/user-attachments/assets/b714dabc-faa5-45b5-a5be-ae424266110c" />
+	<img width="2928" height="1902" alt="image" src="../assets/final-report/timer_help.png" />
 
 ### 3.2 残った課題と解決案
 swingを使ったスマホアプリを作成できなかったこと

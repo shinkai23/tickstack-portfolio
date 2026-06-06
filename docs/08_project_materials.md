@@ -29,6 +29,22 @@
 - [開発時のシステム構成図](assets/reference/systemdiagram.png)
 - [スマホ等の使用時間と学力の関係](assets/reference/smartphone-study-reference.png)
 
+## 最終報告書内の画面・実機画像
+
+最終報告書内で参照していた画像を、外部リンクではなくローカルの資料画像として保存しています。
+
+| 内容 | 画像 |
+|---|---|
+| 実機写真（時計・タイマー画面） | ![実機写真](assets/final-report/device_clock.png) |
+| 実機ポモドーロタイマー | ![実機ポモドーロタイマー](assets/final-report/device_pomodoro.png) |
+| Webトップ画面 | ![Webトップ画面](assets/final-report/web_top.png) |
+| ToDo設定画面 | ![ToDo設定画面](assets/final-report/todo_form.png) |
+| タスク一覧 | ![タスク一覧](assets/final-report/todo_list.png) |
+| ToDo説明モーダル | ![ToDo説明モーダル](assets/final-report/todo_help.png) |
+| タイマー設定画面 | ![タイマー設定画面](assets/final-report/timer_form.png) |
+| タイマー履歴画面 | ![タイマー履歴画面](assets/final-report/timer_history.png) |
+| タイマー説明モーダル | ![タイマー説明モーダル](assets/final-report/timer_help.png) |
+
 ## 報告書アーカイブ
 
 元の提出資料を、公開用に伏せ字化したMarkdownです。文章は当時の資料の雰囲気を残しつつ、個人情報と未検証の定量成果表現を整理しています。

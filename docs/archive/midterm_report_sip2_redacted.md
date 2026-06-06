@@ -55,13 +55,13 @@
 
 画面レイアウト：  
 * メイン画面：大きな残り時間表示＋モード表示＋開始／停止ボタン
-<img width="626" height="608" alt="image" src="https://github.com/user-attachments/assets/0b894901-9cfc-4d41-9157-bcaf7c5076c1" />
+<img width="626" height="608" alt="image" src="../assets/final-report/device_pomodoro.png" />
 * M5stack側のTodo画面:todo画面+チェックマーク+完了ボタン
-<img width="903" height="956" alt="image" src="https://github.com/user-attachments/assets/637e90a5-8738-4cf7-853a-78981cb3b3db" />
+<img width="903" height="956" alt="image" src="../assets/final-report/device_clock.png" />
 * ToDo画面：タスクタイトル＋締切日時×3件＋完了ボタン  
-<img width="1470" height="920" alt="冂" src="https://github.com/user-attachments/assets/dea0b3c2-f1b7-4069-8a52-638bd4a31201" />
+<img width="1470" height="920" alt="冂" src="../assets/final-report/todo_form.png" />
 * 設定画面：集中／休憩時間設定＋Wi-Fiステータス
-<img width="1470" height="920" alt="スクリーンショット 2025-10-27 17 07 07" src="https://github.com/user-attachments/assets/a4e377df-111b-4c15-8a0f-6dd7814999eb" />
+<img width="1470" height="920" alt="スクリーンショット 2025-10-27 17 07 07" src="../assets/final-report/timer_form.png" />
 
 
 ## 3.進捗状況

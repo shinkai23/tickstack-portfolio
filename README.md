@@ -1,8 +1,8 @@
 # TickStack
 
-![TickStack device demo](docs/assets/hero_device_demo.png)
+![TickStack running on M5Stack Core2](docs/assets/final-report/device_clock.png)
 
-> 元資料内に実機を直接撮影した写真は見つからなかったため、成果発表資料で使用したM5Stackデモ画像を掲載しています。
+M5Stack Core2上でポモドーロタイマー画面を表示している実機写真です。
 
 TickStackは、M5Stack Core2を用いた学習支援デバイスのチーム開発プロジェクトです。ポモドーロタイマーやToDo管理をスマートフォン上で使うと、通知やSNSによって集中が途切れやすいという課題に着目し、「設定はWeb画面、利用はM5Stack」という構成で学習を支援する仕組みを目指しました。
 
