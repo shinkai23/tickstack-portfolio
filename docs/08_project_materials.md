@@ -2,6 +2,16 @@
 
 このページは、元のチーム開発資料をポートフォリオ向けに整理したものです。学籍番号、メンバー実名、一部アカウント名は伏せ字化しています。未測定の定量成果表現は、公開版では削除または弱めています。
 
+## まず見るべき資料
+
+本プロジェクトの内容を短時間で把握する場合は、以下の資料を見ると全体像を理解しやすいです。
+
+- [開発したシステム](assets/poster/Poster6.png)
+- [主要なプログラム](assets/poster/Poster7.png)
+- [開発時のシステム構成図](assets/reference/systemdiagram.png)
+- [実機写真](assets/final-report/device_clock.png)
+- [最終報告書 / SIP2](archive/final_report_sip2_redacted.md)
+
 ## 成果発表スライド
 
 成果発表で使用したスライド画像です。表紙に含まれていたメンバー名は画像上で伏せています。

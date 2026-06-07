@@ -10,6 +10,7 @@ __pycache__/
 # OS / editor generated files
 .DS_Store
 .vscode/
+*.code-workspace
 
 # Local databases
 *.db
