@@ -27,7 +27,7 @@ TickStackでは、設定と利用の場面を分離する構成を採用しま�
 ```mermaid
 flowchart LR
     Setting[Web画面で設定] --> API[Flask API]
-    API --> DB[(DB)]
+    API --> DB[(MySQL)]
     DB --> API
     API --> Device[M5Stack Core2で利用]
 ```

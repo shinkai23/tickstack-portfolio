@@ -40,7 +40,7 @@ Web画面とM5Stackは共通のFlask APIを利用し、必要な情報を取得�
 | GET / POST | /login | ログイン |
 | GET | /logout | ログアウト |
 | GET | / | トップページ表示 |
-| POST | /submit_uid | M5Stack UIDをログインユーザーへ紐づけ |
+| POST | /submit_uid | M5StackのUIDをログインユーザーへ紐づけ |
 | GET | /todo | ToDo一覧表示 |
 | GET | /todo/category/<category_id> | カテゴリ別ToDo一覧表示 |
 | POST | /set_todo | ToDo登録 |
@@ -131,7 +131,7 @@ RESTの考え方に沿った設計へ改善したいと考えています。
 
 現在は主に画面側で入力チェックを行っています。
 
-今後はサーバ側でも入力値の範囲チェックや不正値検証を行い、安全性を向上させたいと考えています。
+今後はバックエンド側でも入力値の範囲チェックや不正値検証を行い、安全性を向上させたいと考えています。
 
 ---
 
